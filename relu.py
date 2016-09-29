@@ -7,6 +7,7 @@ def relu(z):
 def relu_d(z):
     return np.sign(np.maximum(z, 0))
 
+
 if __name__ == "__main__":
     print('ReLU Tests')
     testVector = np.matrix("5 1 0 -1 -2")
