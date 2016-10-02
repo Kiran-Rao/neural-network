@@ -3,7 +3,7 @@ import sigmoid
 
 class Neural_Net(object):
     def __init__(self):
-        # Hyperparameter
+        # Hyperparameters
         self.inputLayerSize = 2
         self.outputLayerSize = 1
         self.hiddenLayerSize = 3
@@ -16,10 +16,10 @@ class Neural_Net(object):
 
     def forward(self, X):
         # Forward Propegation
-        z2 = np.dot(X, self.weights1)
-        a2 = sigmoid.sigmoid(z2)
-        z3 = np.dot(a2, self.weights2)
-        return z3
+        self.z2 = np.dot(X, self.weights1)
+        self.a2 = sigmoid.sigmoid(self.z2)
+        self.z3 = np.dot(self.a2, self.weights2)
+        return self.z3
 
     def backprop(self, X):
         # Back Propegation
